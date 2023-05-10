@@ -7,4 +7,3 @@ RUN groupadd -r puppeteer && useradd -r -g puppeteer -G audio,video puppeteer \
     && mkdir -p /home/puppeteer/Downloads \
     && chown -R puppeteer:puppeteer /home/puppeteer \
     && chown -R puppeteer:puppeteer /app
-USER puppeteer
