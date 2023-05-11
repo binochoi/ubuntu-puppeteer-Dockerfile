@@ -19,10 +19,16 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push container image
-      id: build-image
       uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile
         push: true
         tags: binodeveloper/ubuntu-puppeteer:${{ github.sha }}
+    - name: Build and push container image (latest)
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: binodeveloper/ubuntu-puppeteer:latest
